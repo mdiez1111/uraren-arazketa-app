@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Uraren Arazketa App</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f8ff;
+}
+
+header {
+    background-color: #0077b6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #023e8a;
+}
+
+nav button {
+    background-color: white;
+    color: #023e8a;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav button.active {
+    background-color: #90e0ef;
+    color: #023e8a;
+}
+
+nav button:hover {
+    background-color: #caf0f8;
+}
+
+section {
+    display: none;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 700px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    color: #0077b6;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0077b6;
+    color: white;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Uraren Arazketa App</h1>
+</header>
+
+<nav>
+    <button data-target="info" class="active">Informazioa</button>
+    <button data-target="gida">Gida</button>
+<button data-target="ondorioa">Ondorioa</button>
+    <button data-target="quiz">Galdetegia</button>
+</nav>
+
+<!-- Sección Informazioa -->
+<section id="info" class="active">
+
+    <p>
+        Gaur egun munduan zehar arazo asko ditugu, tartean uraren kutsadura. Pertsonak askotan ez dira konturatzen kutsaduraren ondorioez, baina kutsadura honek flora eta fauna kaltezen ditu eta ekosistema aldatu egiten du, ura zikindu eta zirkulazioa oztopatzen duelarik.  
+    </p>
+    <p>
+        Hori dela eta, uraren kutsadura saihesteko soluzioak behar dira. Proiektu honek ur purifikatzaile baten inguruko informazioa ematen du, material naturalak erabiliz nola egin erakutsiz eta uraren kutsadura murrizteko helburuz.
+    </p>
+    <h3>Proiektuaren helburuak</h3>
+    <ol>
+        <li>Jende gehienak uraren kutsaduraren inguruko interesa erakustea.</li>
+        <li>Gustuko dutenek aplikazioa instalatzeko interesa izatea.</li>
+        <li>Jende askok zer den ur purifikatzaile bat ondo ezagutzea.</li>
+    </ol>
+
+<h3>Aplikazioa</h3>
+
+<p>
+Aplikazioak mugikorretan, tabletetan edo ordenagailuetan erabiltzen diren
+software programak dira. Aplikazioen helburua informazioa modu erraz eta
+bisualean eskaintzea da, erabiltzaileek gai bat hobeto ulertzeko.
+</p>
+
+<p>
+Aplikazio honetan, uraren arazketari buruzko informazioa ematen da.
+Uraren filtrazio-prozesuan hainbat urrats daude, eta horietako bat
+<strong>koagulazioa</strong> da.
+</p>
+
+<p>
+Koagulazioan, koagulante izeneko substantzia bat erabiltzen da.
+Substantzia horren lana da <strong>zikinkerik txikienak elkartzea</strong>
+eta <strong>floku izeneko multzo handiagoak sortzea</strong>.
+Horrela, ondoren, zikinkeria hori errazago kendu daiteke uratik.
+</p>
+
+<p>
+Horregatik, aplikazioak prozesu hauek azaltzen ditu, erabiltzaileek
+ulertu dezaten nola funtzionatzen duen uraren filtrazioak eta zergatik
+den garrantzitsua urrats bakoitza.
+</p>
+
+
+<svg width="700" height="200" viewBox="0 0 900 250"
+     xmlns="http://www.w3.org/2000/svg"
+     font-family="Arial">
+
+  <defs>
+    <style>
+      .title { font-size:18px; font-weight:bold; fill:#023e8a; }
+      .label { font-size:12px; font-weight:bold; fill:#000; text-anchor:middle; }
+      .box   { fill:#ffffff; stroke:#90e0ef; stroke-width:2; rx:12; }
+      .arrow { stroke:#c0392b; stroke-width:2; marker-end:url(#arrow); }
+      .icon { stroke:#023e8a; stroke-width:1.5; }
+      .icon-text { font-size:10px; fill:#000; text-anchor:middle; }
+    </style>
+
+    <marker id="arrow" markerWidth="6" markerHeight="6"
+            refX="3" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <!-- TÍTULO PRINCIPAL -->
+  <text x="450" y="25" text-anchor="middle" class="title">
+    Uraren kutsadura eta purifikazioa
+  </text>
+
+  <!-- BLOQUE IZQUIERDA: UR KUTSATUA -->
+  <rect x="40" y="40" width="200" height="110" class="box"/>
+  <rect x="40" y="40" width="200" height="25" fill="#ff6b6b" rx="12"/>
+  <text x="140" y="58" class="label" fill="#fff">
+    Ur kutsatua
+  </text>
+
+  <!-- Iconos debajo del cuadro -->
+  <circle cx="90" cy="115" r="16" class="icon" fill="#888"/>
+  <text x="90" y="140" class="icon-text">Industria</text>
+
+  <circle cx="190" cy="115" r="16" class="icon" fill="#8c5e3c"/>
+  <text x="190" y="140" class="icon-text">Nekazaritza</text>
+
+  <!-- FLECHA HACIA PURIFICACIÓN -->
+  <line x1="250" y1="95" x2="330" y2="95" class="arrow"/>
+
+  <!-- BLOQUE CENTRO: URAREN PURIFIKAZIOA -->
+  <rect x="330" y="40" width="200" height="110" class="box"/>
+  <rect x="330" y="40" width="200" height="25" fill="#00b4d8" rx="12"/>
+  <text x="430" y="58" class="label" fill="#fff">
+    Uraren purifikazioa
+  </text>
+
+  <!-- Iconos debajo del cuadro -->
+  <circle cx="380" cy="115" r="16" class="icon" fill="#4da6ff"/>
+  <text x="380" y="140" class="icon-text">Iragazketa</text>
+
+  <circle cx="480" cy="115" r="16" class="icon" fill="#d9d9d9"/>
+  <text x="480" y="140" class="icon-text">Hondarra</text>
+
+  <!-- FLECHA HACIA UR GARBIA -->
+  <line x1="540" y1="95" x2="610" y2="95" class="arrow"/>
+
+  <!-- BLOQUE DERECHA: UR GARBIA -->
+  <rect x="610" y="40" width="200" height="110" class="box"/>
+  <rect x="610" y="40" width="200" height="25" fill="#4da6ff" rx="12"/>
+  <text x="710" y="58" class="label" fill="#fff">
+    Ur garbia
+  </text>
+
+  <!-- Iconos debajo del cuadro -->
+  <circle cx="660" cy="115" r="16" class="icon" fill="#228B22"/>
+  <text x="660" y="140" class="icon-text">Flora</text>
+
+  <circle cx="760" cy="115" r="16" class="icon" fill="#f1c40f"/>
+  <text x="760" y="140" class="icon-text">Fauna</text>
+
+</svg>
+
+
+
+</section>
+
+<!-- Sección Gida -->
+<section id="gida">
+
+    <h3>Uraren egitura eta iturriak</h3>
+    <p>
+        Ura H₂O da, bi hidrogeno eta oxigeno atomoz osatua, eta ura oso garrantzitsua da bizitzarako. Munduko uraren gehiena itsasoko ura da (97,5%), eta gainerakoa ibaietan, lakuetan eta lurpeko ur gezetan dago. Ur hori nekazaritza, industria eta gizakien kontsumorako erabiltzen da.
+    </p>
+    <h3>Uraren filtrazioa</h3>
+    <p>
+        Etxeetara iristen den ura zuzenean edangarria ez da izan ohi, lurra, bakterioak eta bestelako zikinkerak baititu. Ur hori garbitzeko, koagulanteak eta beste metodo batzuk erabiltzen dira zikinkerik handienak biltzeko eta ondoren ura garbitzeko.
+    </p>
+
+    <h3>Etxeko filtroaren gida</h3>
+    <h4>Materialak:</h4>
+    <ul>
+        <li>Plastikozko botila</li>
+        <li>Kotoia edo oihala</li>
+        <li>Ikatz zatitua</li>
+        <li>Hondarra</li>
+        <li>Legarra</li>
+        <li>Ontzi bat</li>
+<svg width="480" height="650" viewBox="0 0 480 650"
+     xmlns="http://www.w3.org/2000/svg"
+     font-family="Arial">
+
+  <!-- Botella -->
+  <rect x="160" y="40" width="160" height="420"
+        rx="30" ry="30"
+        fill="none" stroke="#3a7bd5" stroke-width="5"/>
+
+  <!-- Capas de la botella -->
+  <rect x="165" y="50" width="150" height="70" fill="#4da6ff"/>
+  <text x="330" y="90" font-size="15" fill="black" text-anchor="start">Ura</text>
+
+  <rect x="165" y="120" width="150" height="60" fill="#d9d9d9"/>
+  <text x="330" y="155" font-size="15" fill="black" text-anchor="start">Harri txikia</text>
+
+  <rect x="165" y="180" width="150" height="60" fill="#e6c18a"/>
+  <text x="330" y="215" font-size="15" fill="black" text-anchor="start">Harre loda</text>
+
+  <rect x="165" y="240" width="150" height="60" fill="#f2d7a0"/>
+  <text x="330" y="275" font-size="15" fill="black" text-anchor="start">Harre fina</text>
+
+  <rect x="165" y="300" width="150" height="60" fill="#444"/>
+  <text x="330" y="335" font-size="15" fill="black" text-anchor="start">Karbon aktiboa</text>
+
+  <rect x="165" y="360" width="150" height="50" fill="#ffffff" stroke="#999"/>
+  <text x="330" y="390" font-size="15" fill="black" text-anchor="start">Kotoia</text>
+
+  <!-- Salida de agua filtrada -->
+  <rect x="230" y="460" width="20" height="40" fill="#4da6ff"/>
+
+  <!-- Vaso de agua debajo -->
+  <rect x="210" y="520" width="60" height="80"
+        fill="#4da6ff" stroke="#3a7bd5" stroke-width="3" rx="5" ry="5"/>
+
+  <!-- Gotas cayendo al vaso -->
+  <circle cx="240" cy="510" r="5" fill="#4da6ff"/>
+  <circle cx="250" cy="515" r="5" fill="#4da6ff"/>
+  <circle cx="230" cy="518" r="5" fill="#4da6ff"/>
+
+  <!-- Etiqueta de botella -->
+  <text x="50" y="70" font-size="16" fill="black">Botila</text>
+
+</svg>
+
+</body>
+</html>
+
+</body>
+</html>
+
+    </ul>
+    <h4>Pausoak:</h4>
+    <ol>
+        <li>Moztu botila erditik.</li>
+        <li>Jarri kotoia beheko aldean.</li>
+        <li>Gehitu ikatza, hondarra eta legarra geruzatan.</li>
+        <li>Bota ura goitik behera.</li>
+    </ol>
+    <p><strong>Garrantzitsua:</strong> Ura edan aurretik irakitea gomendatzen da.</p>
+
+<svg width="560" height="160" viewBox="0 0 560 160"
+     xmlns="http://www.w3.org/2000/svg"
+     font-family="Arial">
+
+  <defs>
+    <style>
+      .box { fill:#ffffff; stroke:#cbd5e1; stroke-width:1.5; rx:12; }
+      .num { fill:#ffffff; font-size:12px; font-weight:bold; }
+      .numCircle { fill:#0077b6; }
+      .text { font-size:11px; fill:#000; font-weight:bold; text-anchor:middle; }
+    </style>
+  </defs>
+
+  <!-- PASO 1 -->
+  <rect x="20" y="40" width="110" height="70" class="box"/>
+  <circle cx="75" cy="28" r="10" class="numCircle"/>
+  <text x="75" y="32" class="num">1</text>
+  <rect x="60" y="55" width="30" height="40" rx="6"
+        fill="none" stroke="#555" stroke-width="1.5"/>
+  <line x1="60" y1="75" x2="90" y2="75"
+        stroke="#c0392b" stroke-width="1.5"/>
+  <text x="75" y="105" class="text">Moztu botila</text>
+
+  <!-- PASO 2 -->
+  <rect x="145" y="40" width="110" height="70" class="box"/>
+  <circle cx="200" cy="28" r="10" class="numCircle"/>
+  <text x="200" y="32" class="num">2</text>
+  <ellipse cx="200" cy="70" rx="22" ry="8"
+           fill="#ffffff" stroke="#999" stroke-width="1.5"/>
+  <text x="200" y="105" class="text">Jarri kotoia</text>
+
+  <!-- PASO 3 -->
+  <rect x="270" y="40" width="110" height="70" class="box"/>
+  <circle cx="325" cy="28" r="10" class="numCircle"/>
+  <text x="325" y="32" class="num">3</text>
+  <rect x="310" y="55" width="30" height="8" fill="#444"/>
+  <rect x="310" y="65" width="30" height="8" fill="#f2d7a0"/>
+  <rect x="310" y="75" width="30" height="8" fill="#d9d9d9"/>
+  <text x="325" y="105" class="text">Geruzak</text>
+
+  <!-- PASO 4 -->
+  <rect x="395" y="40" width="110" height="70" class="box"/>
+  <circle cx="450" cy="28" r="10" class="numCircle"/>
+  <text x="450" y="32" class="num">4</text>
+  <path d="M450 50
+           C443 63, 445 75, 450 78
+           C455 75, 457 63, 450 50 Z"
+        fill="#4da6ff"/>
+  <rect x="435" y="78" width="30" height="8"
+        fill="none" stroke="#4da6ff" stroke-width="1.5" rx="4"/>
+  <text x="450" y="105" class="text">Bota ura</text>
+
+</svg>
+</section>
+
+<!-- Sección Ondorioa -->
+<section id="ondorioa">
+<h2>4. ONDORIOA</h2>
+
+<p>
+Proiektu honen bidez ikusi dugu uraren kutsadura arazo garrantzitsua dela eta
+ingurumenari zein gizakien osasunari kalte egiten diola. Ur garbia beharrezkoa
+da bizitzarako, baina giza jarduerek askotan uraren kalitatea kaltetzen dute.
+</p>
+
+<p>
+Sortutako aplikazioaren helburua da uraren garrantzia azaltzea eta etxean
+ur purifikatzaile sinple bat nola egin erakustea, material naturalak erabiliz.
+</p>
+
+<p>
+Azkenik, proiektu hau zuzenean lotuta dago hurrengo Garapen Jasangarrirako Helburu hauekin eta ingurumenarekiko jarrera arduratsua sustatzera laguntzen du.
+</p>
+    <h3>Helburu nagusiak:</h3>
+    <ul>
+        <li><strong>GHI 6:</strong> Uraren purifikazioa eta saneamendua sustatzea, kudeaketa jasangarria eta guztiontzako saneamendu on bat bermatuz.</li>
+        <li><strong>GHI 3:</strong> Osasuna eta ongizatea hobetzea, gaixotasunak saihestuz.</li>
+        <li><strong>GHI 12:</strong> Ekoizpen eta kontsumo arduratsua bultzatzea, baliabideak modu jasangarrian erabiliz eta hondakinak murriztuz.</li>
+    </ul>
+<svg width="700" height="495" viewBox="0 0 1000 707"
+     xmlns="http://www.w3.org/2000/svg"
+     font-family="Arial">
+
+  <rect width="1000" height="707" fill="white"/>
+
+  <!-- GHI 6 -->
+  <rect x="80" y="150" width="260" height="360" rx="20" fill="#26BDE2"/>
+  <text x="210" y="250" font-size="110" fill="white" font-weight="bold" text-anchor="middle">6</text>
+  <text x="210" y="300" font-size="26" fill="white" font-weight="bold" text-anchor="middle">
+    UR GARBIA ETA
+  </text>
+  <text x="210" y="330" font-size="26" fill="white" font-weight="bold" text-anchor="middle">
+    SANEAMENDUA
+  </text>
+  <!-- Gota subida -->
+  <path d="M210 350
+           C180 400, 195 440, 210 460
+           C225 440, 240 400, 210 350 Z"
+        fill="white"/>
+
+  <!-- GHI 3 -->
+  <rect x="370" y="150" width="260" height="360" rx="20" fill="#4C9F38"/>
+  <text x="500" y="250" font-size="110" fill="white" font-weight="bold" text-anchor="middle">3</text>
+  <text x="500" y="300" font-size="26" fill="white" font-weight="bold" text-anchor="middle">
+    OSASUNA ETA
+  </text>
+  <text x="500" y="330" font-size="26" fill="white" font-weight="bold" text-anchor="middle">
+    ONGIZATEA
+  </text>
+  <!-- Corazón subido -->
+  <path d="M500 380
+           C460 340, 420 360, 500 470
+           C580 360, 540 340, 500 380 Z"
+        fill="white"/>
+
+  <!-- GHI 12 -->
+  <rect x="660" y="150" width="260" height="360" rx="20" fill="#BF8B2E"/>
+  <text x="790" y="250" font-size="110" fill="white" font-weight="bold" text-anchor="middle">12</text>
+  <text x="790" y="300" font-size="26" fill="white" font-weight="bold" text-anchor="middle">
+    EKOIZPEN ETA
+  </text>
+  <text x="790" y="330" font-size="26" fill="white" font-weight="bold" text-anchor="middle">
+    KONTSUMO
+  </text>
+  <!-- Círculo subido -->
+  <circle cx="790" cy="420" r="60"
+          fill="none" stroke="white" stroke-width="12"/>
+
+</svg>
+</section>
+<!-- Sección Quiz -->
+<section id="quiz">
+    <h2>Galdetegia</h2>
+
+<p>
+Atal honetan, ikasitakoa berrikusteko galdetegi labur bat dago.
+Helburua erabiltzaileak informazioa ulertu duen ikustea da.
+</p>
+
+    <p>1. Zer eragiten du uraren kutsadurak?</p>
+    <input type="radio" id="q1a" name="q1"> Ura garbitzea<br>
+    <input type="radio" id="q1b" name="q1"> Flora eta fauna kaltezea<br>
+    <input type="radio" id="q1c" name="q1"> Ura hoztea<br><br>
+
+    <p>2. Zein material erabiltzen da etxeko filtro batean geruzatan?</p>
+    <input type="radio" id="q2a" name="q2"> Karbon aktiboa<br>
+    <input type="radio" id="q2b" name="q2"> Plastiko<br>
+    <input type="radio" id="q2c" name="q2"> Altzairua<br><br>
+
+    <p>3. Zer egin behar da ura edan aurretik?</p>
+    <input type="radio" id="q3a" name="q3"> Irakitea<br>
+    <input type="radio" id="q3b" name="q3"> Hotzetzea<br>
+    <input type="radio" id="q3c" name="q3"> Margotzea<br><br>
+
+    <p>4. Zer da koagulante baten lana uraren filtrazioan?</p>
+    <input type="radio" id="q4a" name="q4"> Uraren kolorea aldatzea<br>
+    <input type="radio" id="q4b" name="q4"> Zikinkerik txikienak elkartzea floku handiagoak sortzeko<br>
+    <input type="radio" id="q4c" name="q4"> Uraren zaporea hobetzea<br><br>
+
+    <p>5. GHI 3 eta GHI 12 kenduta, zein beste GHI helburu dago uraren garbiketa eta saneamenduarekin lotuta?</p>
+    <input type="radio" id="q5a" name="q5"> GHI 1<br>
+    <input type="radio" id="q5b" name="q5"> GHI 6<br>
+    <input type="radio" id="q5c" name="q5"> GHI 10<br><br>
+
+    <button id="checkQuiz">Zuzendu</button>
+    <p id="resultado"></p>
+</section>
+
+<footer>
+    <p>Egileak: Enara Sagasti eta Izaro Ogara</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll("nav button");
+    const sections = document.querySelectorAll("section");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            buttons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const target = btn.getAttribute("data-target");
+            sections.forEach(sec => sec.classList.remove("active"));
+            document.getElementById(target).classList.add("active");
+        });
+    });
+
+    document.getElementById("checkQuiz").addEventListener("click", () => {
+        let puntuak = 0;
+        if (document.getElementById("q1b").checked) puntuak++;
+        if (document.getElementById("q2a").checked) puntuak++;
+        if (document.getElementById("q3a").checked) puntuak++;
+        if (document.getElementById("q4b").checked) puntuak++;
+        if (document.getElementById("q5b").checked) puntuak++;
+
+        document.getElementById("resultado").textContent = "Zure emaitza: " + puntuak + " / 5 erantzun zuzen.";
+    });
+});
+</script>
+
+</body>
+</html>
